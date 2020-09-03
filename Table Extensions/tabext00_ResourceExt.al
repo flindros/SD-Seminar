@@ -1,4 +1,4 @@
-tableextension 50101 "CSD Resource" extends Resource
+tableextension 50108 "CSD Resource" extends Resource
 {
     fields
     {

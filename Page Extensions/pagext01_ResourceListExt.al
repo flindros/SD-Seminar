@@ -1,4 +1,4 @@
-pageextension 50102 "CSD ResourceListExt" extends "Resource List"
+pageextension 50122 "CSD ResourceListExt" extends "Resource List"
 {
     layout
     {
