@@ -36,5 +36,5 @@
   "showMyCode": true,
   "runtime": "5.0",
   "features": ["TranslationFile"],
-  "target": 
+  "target": "Cloud"
 }
