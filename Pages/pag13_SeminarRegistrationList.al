@@ -4,7 +4,9 @@ page 50113 "CSD Seminar Registration List"
     //   Chapter 6 - Lab 3
     //     - Created new page
     //   Chapter 7 - Lab 5-8
-    //     - Added Post Action  
+    //     - Added Post Action 
+    //   Chapter 9 - Lab 5-8
+    //     - Added Post Acti
 
     Caption = 'Seminar Registration List';
     CardPageID = "CSD Seminar Registration";
@@ -12,7 +14,6 @@ page 50113 "CSD Seminar Registration List"
     PageType = List;
     SourceTable = "CSD Seminar Reg. Header";
     UsageCategory = lists;
-    ApplicationArea = All;
 
     layout
     {
@@ -79,8 +80,8 @@ page 50113 "CSD Seminar Registration List"
                     Caption = 'Co&mments';
                     Image = Comment;
                     RunObject = Page 50106;
-                    RunPageLink = "No." = Field("No.");
-                    RunPageView = where("Table Name" = Const("Seminar Registration"));
+                    RunPageLink = "No." = Field ("No.");
+                    RunPageView = where ("Table Name" = const ("Seminar Registration"));
                     ApplicationArea = All;
                 }
                 action("&Charges")
@@ -88,7 +89,7 @@ page 50113 "CSD Seminar Registration List"
                     Caption = '&Charges';
                     Image = Costs;
                     RunObject = Page 50124;
-                    RunPageLink = "Document No." = Field("No.");
+                    RunPageLink = "Document No." = Field ("No.");
                     ApplicationArea = All;
                 }
                 action("&Post")
@@ -101,6 +102,22 @@ page 50113 "CSD Seminar Registration List"
                     ShortcutKey = F9;
                     RunObject = codeunit "CSD Seminar-Post (Yes/No)";
                     ApplicationArea = All;
+                }
+                action("&Print")
+                {
+                    Caption = '&Print';
+                    Image = Print;
+                    Promoted = true;
+                    PromotedIsBig = true;
+                    PromotedCategory = Process;
+                    ApplicationArea = All;
+
+                    trigger OnAction();
+                    var
+                        SeminarReportSelection: Record "CSD Seminar Report Selections";
+                    begin
+                        SeminarReportSelection.PrintReportSelection(SeminarReportSelection.Usage::Registration, Rec);
+                    end;
                 }
             }
         }
