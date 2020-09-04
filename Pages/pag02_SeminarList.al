@@ -68,14 +68,13 @@ page 50102 "CSD Seminar List"
                 {
                     Caption = 'Co&mments';
                     RunObject = page "CSD Seminar Comment Sheet";
-                    RunPageLink = "Table Name" = const(Seminar), "No." = field("No.");
+                    RunPageLink = "Table Name" = const (Seminar), "No." = field ("No.");
                     Image = Comment;
                     Promoted = true;
                     PromotedIsBig = true;
                     PromotedOnly = true;
                     ApplicationArea = All;
                 }
-                /*
                 // >> Lab 8-2
                 action("Ledger Entries")
                 {
@@ -100,13 +99,11 @@ page 50102 "CSD Seminar List"
                     ApplicationArea = All;
                 }
                 // << Lab 8-2
-                */
             }
         }
         // >> Lab 8-2
         area(Processing)
         {
-            /*
             action("Seminar Registration")
             {
                 Caption = 'Seminar Registration';
@@ -119,7 +116,6 @@ page 50102 "CSD Seminar List"
                 ApplicationArea = All;
 
             }
-            */
         }
         // << Lab 8-2
     }
